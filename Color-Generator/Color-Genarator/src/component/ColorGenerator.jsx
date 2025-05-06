@@ -53,16 +53,11 @@ function ColorGenerator() {
       >
         Random Color Generator
       </button>
+
+      <h3>Type of Color= {typeOfColor}</h3>
+      <h1> Color: {color}</h1>
     </div>
   );
 }
 
 export default ColorGenerator;
-
-/* rgb (255, 255, 255)
-
-0-255
-
-
-
-*/
