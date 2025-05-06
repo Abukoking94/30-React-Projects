@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 function ColorGenerator() {
   const [color, setColor] = useState("black");
@@ -27,6 +27,10 @@ function ColorGenerator() {
     setColor(`rgb( ${r} ,${g}, ${b} )`);
     console.log(color);
   }
+
+  useEffect(() => {
+    typeOfColor === "hex" ? handleRandomRgbColor() : handleRandomHexColor();
+  }, [typeOfColor]);
 
   return (
     <div style={{ width: "100vw", height: "100vh", backgroundColor: color }}>
