@@ -3,28 +3,25 @@ import { useState } from "react";
 import { FaStar } from "react-icons/fa";
 import "../App.css";
 
-function StarRating({ noOfStars = 6 }) {
+function StarRating({ noOfStars = 5 }) {
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
-
-  function handleClick(getIndex) {
-    console.log("click " + getIndex);
-    setRating(getIndex);
-  }
-
-  function handleMove(getIndex) {
-    console.log("hover " + getIndex);
-
-    setHover(getIndex);
-  }
-  function handleLeave() {
-    setHover(rating);
-  }
-
   return (
-    <div className="starRating">
+    <div className="StarRating">
       {[...Array(noOfStars)].map((_, index) => {
         index += 1;
+
+        function handleClick(getIndex) {
+          setRating(getIndex);
+        }
+
+        function handleMove(getIndex) {
+          setHover(getIndex);
+        }
+
+        function handleLeave(getIndex) {
+          setHover(rating);
+        }
 
         return (
           <FaStar
@@ -32,12 +29,13 @@ function StarRating({ noOfStars = 6 }) {
             className={index <= (hover || rating) ? "active" : "inActive"}
             onClick={() => handleClick(index)}
             onMouseMove={() => handleMove(index)}
-            onMouseLeave={() => handleLeave()}
-            size={50}
+            onMouseLeave={() => handleLeave(index)}
+            size={40}
           />
         );
       })}
     </div>
   );
 }
+
 export default StarRating;
