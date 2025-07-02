@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.product-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.prod-container {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 70%;
+  height: 70%;
+}
+
+.load-btn-cont{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.load-btn{
+  width: 150px;
+  height: 30px;
+}

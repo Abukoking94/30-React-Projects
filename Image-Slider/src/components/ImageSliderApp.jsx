@@ -33,7 +33,7 @@ function ImageSliderApp({ url, limit = 10, page = 1 }) {
   }
 
   if (errorMsg !== null) {
-    <h1> Error Occured {errorMsg}</h1>;
+    return <h1> Error Occured {errorMsg}</h1>;
   }
 
   function handlePrev() {
@@ -79,8 +79,7 @@ function ImageSliderApp({ url, limit = 10, page = 1 }) {
                 }
                 onClick={() => setCurrentSlide(index)}
               >
-                {" "}
-                {index}
+                {currentSlide === index ? index + 1 : ""}
               </button>
             ))
           : null}
