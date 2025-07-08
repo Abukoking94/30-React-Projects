@@ -1,7 +1,12 @@
 import React from "react";
+import MenuList from "./menu-list";
 
-function index({ list = [] }) {
-  return <div>index</div>;
+function Index1({ menus = [] }) {
+  return (
+    <div>
+      <MenuList list={menus} />
+    </div>
+  );
 }
 
-export default index;
+export default Index1;

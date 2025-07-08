@@ -1,7 +1,13 @@
-import React from "react";
+import MenuItem from "./menu-item";
 
-function menuList() {
-  return <div>menuList</div>;
+function MenuList({ list = [] }) {
+  return (
+    <ul>
+      {list && list.length
+        ? list.map((listItem) => <MenuItem item={listItem} />)
+        : null}
+    </ul>
+  );
 }
 
-export default menuList;
+export default MenuList;
